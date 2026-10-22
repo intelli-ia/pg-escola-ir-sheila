@@ -31,7 +31,7 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           rolou
-            ? "border-b border-menta-linha bg-menta-fundo/90 text-petroleo backdrop-blur-xl"
+            ? "border-b border-menta-linha bg-menta-fundo text-petroleo md:bg-menta-fundo/90 md:backdrop-blur-xl"
             : "border-b border-transparent text-white"
         }`}
       >

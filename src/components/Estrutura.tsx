@@ -8,7 +8,12 @@ const quadros = [
   "md:col-span-2",
 ];
 
-const alts = ["Sala de aula", "Laboratório de informática", "Biblioteca", "Fachada da escola"];
+const fotos = [
+  { src: "/fotos/estrutura-sala-de-aula.webp", alt: "Sala de aula" },
+  { src: "/fotos/estrutura-informatica.webp", alt: "Laboratório de informática" },
+  { src: "/fotos/estrutura-biblioteca.webp", alt: "Biblioteca" },
+  { src: "/fotos/estrutura-fachada.webp", alt: "Fachada da escola" },
+];
 
 export default function Estrutura() {
   return (
@@ -24,7 +29,7 @@ export default function Estrutura() {
           {quadros.map((classe, i) => (
             <Reveal key={i} delay={i * 0.07} className={classe}>
               <div className="cartao h-full p-2">
-                <FotoSlot src={`/fotos/espaco-${i + 1}.webp`} alt={alts[i]} className="aspect-[4/3] h-full w-full rounded-[1.35rem] md:aspect-auto" />
+                <FotoSlot src={fotos[i].src} alt={fotos[i].alt} className="aspect-[4/3] h-full w-full rounded-[1.35rem] md:aspect-auto" />
               </div>
             </Reveal>
           ))}

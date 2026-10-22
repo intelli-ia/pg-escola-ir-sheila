@@ -13,8 +13,8 @@ export default function Hero() {
       className="grao relative isolate flex min-h-[100svh] items-center overflow-hidden bg-petroleo pb-20 pt-32 text-white md:pb-24"
     >
       {/* Brilho de fundo */}
-      <div className="pointer-events-none absolute -right-40 top-1/2 -z-10 h-[46rem] w-[46rem] -translate-y-1/2 rounded-full bg-petroleo-claro/55 blur-[110px]" />
-      <div className="pointer-events-none absolute -bottom-52 -left-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-coral/10 blur-[120px]" />
+      <div className="pointer-events-none absolute -right-40 top-1/2 -z-10 h-[46rem] w-[46rem] -translate-y-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(27,94,95,0.55),transparent)]" />
+      <div className="pointer-events-none absolute -bottom-52 -left-40 -z-10 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(closest-side,rgba(232,98,63,0.12),transparent)]" />
 
       {/* Composição: anéis + símbolo */}
       <div className="pointer-events-none absolute -right-24 top-1/2 -z-10 hidden h-[40rem] w-[40rem] -translate-y-1/2 lg:block xl:right-6">

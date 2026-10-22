@@ -9,7 +9,7 @@ export default function Localizacao() {
       <div className="container-x">
         <Reveal>
           <div className="grao relative isolate flex flex-col items-start justify-between gap-8 overflow-hidden rounded-[2rem] bg-petroleo px-7 py-10 text-white md:flex-row md:items-center md:px-14 md:py-12">
-            <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-72 w-72 rounded-full bg-coral/20 blur-[90px]" />
+            <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(232,98,63,0.22),transparent)]" />
             <div className="flex items-center gap-5">
               <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-menta text-petroleo">
                 <MapPin className="h-6 w-6" strokeWidth={1.6} />

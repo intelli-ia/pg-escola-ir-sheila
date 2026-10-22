@@ -39,7 +39,7 @@ export default function Cursos() {
       id="cursos"
       className="grao relative overflow-hidden bg-petroleo-escuro py-20 text-white md:py-32"
     >
-      <div className="pointer-events-none absolute -top-40 left-1/2 h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-petroleo-claro/35 blur-[120px]" />
+      <div className="pointer-events-none absolute -top-40 left-1/2 h-[30rem] w-[44rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(27,94,95,0.4),transparent)]" />
 
       <div className="container-x relative">
         <Reveal>
