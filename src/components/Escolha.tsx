@@ -23,7 +23,7 @@ export default function Escolha() {
 
           <Reveal delay={0.1} className="mt-10">
             <div className="cartao p-2">
-              <FotoSlot src="/fotos/escolha.jpg" alt="Aula prática de enfermagem" className="aspect-[4/3] w-full rounded-[1.4rem]" />
+              <FotoSlot src="/fotos/escolha.webp" alt="Aula prática de enfermagem" className="aspect-[4/3] w-full rounded-[1.4rem]" />
             </div>
           </Reveal>
         </div>

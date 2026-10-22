@@ -25,7 +25,7 @@ export default function Estrutura() {
           {quadros.map((classe, i) => (
             <Reveal key={i} delay={i * 0.07} className={classe}>
               <div className="cartao h-full p-2">
-                <FotoSlot src={`/fotos/espaco-${i + 1}.jpg`} alt={alts[i]} className="aspect-[4/3] h-full w-full rounded-[1.35rem] md:aspect-auto" />
+                <FotoSlot src={`/fotos/espaco-${i + 1}.webp`} alt={alts[i]} className="aspect-[4/3] h-full w-full rounded-[1.35rem] md:aspect-auto" />
               </div>
             </Reveal>
           ))}

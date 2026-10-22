@@ -22,7 +22,7 @@ export function Marca({ className }: { className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-3", className)}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src="/logo.jpg" alt="Logo Escola Técnica Irmã Sheila" className="h-11 w-11 shrink-0 rounded-full object-cover" />
+      <img src="/logo.webp" alt="Logo Escola Técnica Irmã Sheila" className="h-11 w-11 shrink-0 rounded-full object-cover" />
       <span className="flex flex-col leading-none">
         <span className="text-[0.625rem] font-semibold uppercase tracking-[0.28em] opacity-70">Escola Técnica</span>
         <span className="titulo mt-1 text-[1.45rem] font-medium tracking-tight">Irmã Sheila</span>

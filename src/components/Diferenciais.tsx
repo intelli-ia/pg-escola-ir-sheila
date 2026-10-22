@@ -17,7 +17,7 @@ export default function Diferenciais() {
             <Reveal key={item.titulo} delay={(i % 2) * 0.1}>
               <article className="cartao h-full p-3">
                 <div className="relative">
-                  <FotoSlot src={`/fotos/diferencial-${i + 1}.jpg`} alt={item.titulo} className="aspect-[16/9] w-full rounded-[1.4rem]" />
+                  <FotoSlot src={`/fotos/diferencial-${i + 1}.webp`} alt={item.titulo} className="aspect-[16/9] w-full rounded-[1.4rem]" />
                   <span className="titulo absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-petroleo text-lg text-menta shadow-lg">
                     {i + 1}.
                   </span>
