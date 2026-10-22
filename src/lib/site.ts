@@ -3,16 +3,14 @@
 export const site = {
   nome: "Escola Técnica Irmã Sheila",
   cidade: "Dias D’Ávila",
-  // TODO: substituir pelo WhatsApp oficial da escola (DDI + DDD + número, só dígitos).
-  whatsappNumero: "5571900000000",
+  // DDI + DDD + número, só dígitos: (71) 3190-0118.
+  whatsappNumero: "557131900118",
 } as const;
 
 const wa = (texto: string) =>
   `https://wa.me/${site.whatsappNumero}?text=${encodeURIComponent(texto)}`;
 
-export const whatsapp = wa(
-  "Olá, vim pelo site da Escola Técnica Irmã Sheila e gostaria de fazer minha matrícula.",
-);
+export const whatsapp = wa("Olá! Vim do site e gostaria de fazer minha matrícula");
 
 export const whatsappCurso = (curso: string) =>
   wa(`Olá, vim pelo site da Escola Técnica Irmã Sheila e gostaria de saber mais sobre o curso: ${curso}.`);

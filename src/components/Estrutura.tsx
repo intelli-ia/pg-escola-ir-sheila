@@ -1,7 +1,6 @@
 import { FotoSlot } from "@/components/ui/FotoSlot";
 import { Reveal } from "@/components/ui/Reveal";
 
-/** Fotos de banco de imagens, até o cliente enviar as da escola. */
 const quadros = [
   "md:col-span-2 md:row-span-2",
   "",
