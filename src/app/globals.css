@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/*  Escola Técnica Irmã Sheila — Design System                         */
+/*  Petróleo · Menta · Coral                                           */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Marca */
+  --color-petroleo: #0b3b3f;
+  --color-petroleo-escuro: #062a2d;
+  --color-petroleo-claro: #1b5e5f;
+  --color-menta: #d9ede6;
+  --color-menta-fundo: #f3f8f5;
+  --color-menta-linha: #cfe2da;
+  --color-coral: #e8623f;
+  --color-coral-escuro: #cc4a28;
+  --color-tinta: #10282a;
+
+  /* Tipografia */
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-corpo: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    overflow-x: hidden;
+    background-color: var(--color-menta-fundo);
+    color: var(--color-tinta);
+    font-family: var(--font-corpo);
+    font-weight: 400;
+  }
+
+  ::selection {
+    background-color: var(--color-coral);
+    color: #fff;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Título editorial: Fraunces com entrelinha curta */
+  .titulo {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    line-height: 1.06;
+  }
+
+  .titulo em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  /* Textura de papel — tira o chapado dos fundos sólidos */
+  .grao::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.55;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.12'/%3E%3C/svg%3E");
+  }
+
+  /* Fundos claros com profundidade: luz suave + pontilhado discreto */
+  .fundo-claro {
+    background-color: var(--color-menta-fundo);
+    background-image:
+      radial-gradient(60rem 30rem at 85% -10%, rgba(217, 237, 230, 0.95), transparent 60%),
+      radial-gradient(40rem 26rem at -5% 105%, rgba(232, 98, 63, 0.07), transparent 60%),
+      radial-gradient(rgba(11, 59, 63, 0.07) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+  }
+
+  .fundo-menta {
+    background-color: var(--color-menta);
+    background-image:
+      radial-gradient(50rem 28rem at 10% -10%, rgba(255, 255, 255, 0.7), transparent 60%),
+      radial-gradient(40rem 26rem at 105% 100%, rgba(27, 94, 95, 0.14), transparent 60%),
+      radial-gradient(rgba(11, 59, 63, 0.08) 1px, transparent 1px);
+    background-size: auto, auto, 22px 22px;
+  }
+
+  /* Cartão premium: vidro claro, filete coral que acende no hover */
+  .cartao {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.75rem;
+    border: 1px solid rgba(11, 59, 63, 0.1);
+    background: linear-gradient(160deg, #fff 0%, rgba(255, 255, 255, 0.82) 100%);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 24px 50px -32px rgba(11, 59, 63, 0.45);
+    transition:
+      transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+      border-color 0.4s;
+  }
+  .cartao::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 2;
+    background: linear-gradient(90deg, var(--color-coral), transparent 70%);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .cartao:hover {
+    transform: translateY(-6px);
+    border-color: rgba(232, 98, 63, 0.35);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.9) inset,
+      0 40px 70px -34px rgba(11, 59, 63, 0.55);
+  }
+  .cartao:hover::before {
+    transform: scaleX(1);
+  }
+
+  .container-x {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1.5rem;
+  }
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-x {
+      padding-inline: 3.5rem;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
