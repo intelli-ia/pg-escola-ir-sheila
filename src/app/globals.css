@@ -160,3 +160,25 @@
     scroll-behavior: auto;
   }
 }
+
+@keyframes depoimentos-loop {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.depoimentos-trilho {
+  animation: depoimentos-loop 90s linear infinite;
+}
+
+@media (hover: hover) {
+  .depoimentos-faixa:hover .depoimentos-trilho {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .depoimentos-trilho {
+    animation: none;
+  }
+}

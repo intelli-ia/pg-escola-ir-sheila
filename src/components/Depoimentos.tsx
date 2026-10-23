@@ -1,8 +1,23 @@
 import { Quote } from "lucide-react";
-import { FotoSlot } from "@/components/ui/FotoSlot";
 import { Reveal } from "@/components/ui/Reveal";
+import { depoimentos } from "@/lib/depoimentos";
 
-/** Espaços reservados: os depoimentos ainda não foram fornecidos. */
+function Cartao({ nome, texto }: (typeof depoimentos)[number]) {
+  return (
+    <figure className="cartao flex h-full w-[19rem] shrink-0 flex-col gap-5 p-7 sm:w-[24rem] md:p-8">
+      <Quote className="h-9 w-9 shrink-0 text-coral/70" strokeWidth={1.3} />
+      <blockquote className="space-y-3 text-[0.95rem] leading-relaxed text-tinta/85">
+        {texto.map((p) => (
+          <p key={p}>{p}</p>
+        ))}
+      </blockquote>
+      <figcaption className="mt-auto border-t border-petroleo/10 pt-5 font-semibold text-petroleo">
+        {nome}
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function Depoimentos() {
   return (
     <section id="depoimentos" className="fundo-claro relative py-20 md:py-32">
@@ -12,27 +27,27 @@ export default function Depoimentos() {
             Depoimentos
           </h2>
         </Reveal>
+      </div>
 
-        <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-3">
-          {[0, 1, 2].map((i) => (
-            <Reveal key={i} delay={i * 0.08}>
-              <div className="cartao flex h-full flex-col gap-6 p-7 md:p-8">
-                <Quote className="h-9 w-9 text-coral/70" strokeWidth={1.3} />
-                <div className="space-y-2.5">
-                  <div className="h-2.5 w-full rounded-full bg-petroleo/[0.07]" />
-                  <div className="h-2.5 w-11/12 rounded-full bg-petroleo/[0.07]" />
-                  <div className="h-2.5 w-4/5 rounded-full bg-petroleo/[0.07]" />
-                </div>
-                <div className="mt-auto flex items-center gap-4 border-t border-petroleo/10 pt-6">
-                  <FotoSlot alt="" className="h-14 w-14 shrink-0 rounded-full" />
-                  <div className="flex-1 space-y-2">
-                    <div className="h-2.5 w-2/3 rounded-full bg-petroleo/10" />
-                    <div className="h-2 w-1/3 rounded-full bg-petroleo/[0.06]" />
-                  </div>
-                </div>
+      <div
+        className="depoimentos-faixa mt-12 overflow-hidden motion-reduce:overflow-x-auto md:mt-16"
+        style={{
+          maskImage:
+            "linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)",
+        }}
+      >
+        <div className="depoimentos-trilho flex w-max items-stretch gap-6 px-3 py-2">
+          {[0, 1].map((copia) =>
+            depoimentos.map((d) => (
+              <div
+                key={`${copia}-${d.nome}`}
+                aria-hidden={copia === 1 ? true : undefined}
+                className="flex"
+              >
+                <Cartao {...d} />
               </div>
-            </Reveal>
-          ))}
+            ))
+          )}
         </div>
       </div>
     </section>
