@@ -5,6 +5,8 @@ export const site = {
   cidade: "Dias D’Ávila",
   // DDI + DDD + número, só dígitos: (71) 3190-0118.
   whatsappNumero: "557131900118",
+  endereco: "Avenida Garcia d’Ávila, 276 - Jardim Alvorada, Dias d’Ávila - BA, 42850-000",
+  telefone: "(71) 3190-0118",
 } as const;
 
 const wa = (texto: string) =>
