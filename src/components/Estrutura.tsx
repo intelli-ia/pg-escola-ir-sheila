@@ -20,8 +20,8 @@ export default function Estrutura() {
     <section id="estrutura" className="relative pb-12 pt-20 md:pb-16 md:pt-32">
       <div className="container-x">
         <Reveal>
-          <h2 className="titulo text-[2.3rem] text-petroleo sm:text-[3.1rem] lg:text-[3.8rem]">
-            Estrutura da <em className="text-coral">escola</em>
+          <h2 className="titulo text-[2.3rem] text-institucional sm:text-[3.1rem] lg:text-[3.8rem]">
+            Estrutura da <em className="text-verde-texto">escola</em>
           </h2>
         </Reveal>
 

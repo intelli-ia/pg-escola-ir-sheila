@@ -18,9 +18,9 @@ export const whatsappCurso = (curso: string) =>
   wa(`Olá, vim pelo site da Escola Técnica Irmã Sheila e gostaria de saber mais sobre o curso: ${curso}.`);
 
 export const navegacao = [
-  { href: "#cursos", rotulo: "Cursos" },
-  { href: "#diferenciais", rotulo: "Diferenciais" },
-  { href: "#depoimentos", rotulo: "Depoimentos" },
+  { href: "/#cursos", rotulo: "Cursos" },
+  { href: "/#diferenciais", rotulo: "Diferenciais" },
+  { href: "/#depoimentos", rotulo: "Depoimentos" },
 ] as const;
 
 export const escolhas = [
@@ -28,16 +28,6 @@ export const escolhas = [
   { titulo: "Ter com quem contar:", texto: "professores da área e orientação ao longo da sua formação." },
   { titulo: "Encontrar seu horário:", texto: "opções de turmas durante a semana ou aos sábados, conforme o curso." },
   { titulo: "Estudar perto de você:", texto: "formação na área da saúde em Dias D’Ávila." },
-] as const;
-
-export const cursos = [
-  "Técnico em Enfermagem",
-  "Técnico em Radiologia",
-  "Técnico em Análises Clínicas",
-  "Técnico em Nutrição e Dietética",
-  "Especialização em Saúde do Trabalhador",
-  "Qualificação Profissional em Atendente de Farmácia",
-  "Especialização em Instrumentação Cirúrgica",
 ] as const;
 
 export const diferenciais = [

@@ -8,7 +8,7 @@ export function Simbolo({ className }: { className?: string }) {
       <path d="M24 9v9.5M24 29.5V39" stroke="currentColor" strokeWidth="3.2" strokeLinecap="round" />
       <path
         d="M8.5 24h9l3-5.5 4.5 11 3-5.5h11.5"
-        stroke="#e8623f"
+        stroke="#4DB60F"
         strokeWidth="3.2"
         strokeLinecap="round"
         strokeLinejoin="round"

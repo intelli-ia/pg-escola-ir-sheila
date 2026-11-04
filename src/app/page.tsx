@@ -12,11 +12,13 @@ export default function HomePage() {
   return (
     <>
       <Hero />
-      <Numeros />
+      <div className="relative overflow-hidden bg-white">
+        <Cursos />
+        <Numeros />
+      </div>
       <Escolha />
-      <Cursos />
       <Diferenciais />
-      <div className="fundo-menta">
+      <div className="fundo-suave">
         <Estrutura />
         <Localizacao />
       </div>

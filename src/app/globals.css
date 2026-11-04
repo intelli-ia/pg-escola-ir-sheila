@@ -2,23 +2,26 @@
 
 /* ------------------------------------------------------------------ */
 /*  Escola Técnica Irmã Sheila — Design System                         */
-/*  Petróleo · Menta · Coral                                           */
+/*  Verde vibrante · Verdes institucionais · Vermelho do logotipo      */
 /* ------------------------------------------------------------------ */
 
 @theme {
   /* Marca */
-  --color-petroleo: #0b3b3f;
-  --color-petroleo-escuro: #062a2d;
-  --color-petroleo-claro: #1b5e5f;
-  --color-menta: #d9ede6;
-  --color-menta-fundo: #f3f8f5;
-  --color-menta-linha: #cfe2da;
-  --color-coral: #e8623f;
-  --color-coral-escuro: #cc4a28;
-  --color-tinta: #10282a;
+  --color-verde: #4db60f; /* principal: botões, destaques, elementos interativos */
+  --color-verde-hover: #62c721;
+  --color-verde-forte: #2e8f0b; /* verde mais fechado: fundo onde o texto branco precisa de contraste */
+  --color-verde-texto: #3a8a0c; /* verde legível sobre fundo branco */
+  --color-institucional: #146b0d; /* secundária: títulos, seriedade */
+  --color-profundo: #0b3a14; /* apoio: fundos escuros */
+  --color-vermelho: #e30e09; /* destaque pontual */
+  --color-verde-claro: #e3f3d6;
+  --color-verde-fundo: #f6fbf2;
+  --color-verde-linha: #d3e8c5;
+  --color-tinta: #0b2a12;
 
   /* Tipografia */
   --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-manuscrito: var(--font-kalam), "Segoe Print", "Bradley Hand", cursive;
   --font-corpo: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
 }
 
@@ -32,15 +35,15 @@
 
   body {
     overflow-x: hidden;
-    background-color: var(--color-menta-fundo);
+    background-color: #fff;
     color: var(--color-tinta);
     font-family: var(--font-corpo);
     font-weight: 400;
   }
 
   ::selection {
-    background-color: var(--color-coral);
-    color: #fff;
+    background-color: var(--color-verde);
+    color: var(--color-profundo);
   }
 
   section[id] {
@@ -49,6 +52,11 @@
 }
 
 @layer components {
+  /* Anotação manuscrita sobre fotos */
+  .manuscrito {
+    font-family: var(--font-kalam), "Segoe Print", "Bradley Hand", cursive;
+  }
+
   /* Título editorial: Fraunces com entrelinha curta */
   .titulo {
     font-family: var(--font-display);
@@ -83,33 +91,33 @@
 
   /* Fundos claros com profundidade: luz suave + pontilhado discreto */
   .fundo-claro {
-    background-color: var(--color-menta-fundo);
+    background-color: #fff;
     background-image:
-      radial-gradient(60rem 30rem at 85% -10%, rgba(217, 237, 230, 0.95), transparent 60%),
-      radial-gradient(40rem 26rem at -5% 105%, rgba(232, 98, 63, 0.07), transparent 60%),
-      radial-gradient(rgba(11, 59, 63, 0.07) 1px, transparent 1px);
+      radial-gradient(60rem 30rem at 85% -10%, rgba(227, 243, 214, 0.9), transparent 60%),
+      radial-gradient(40rem 26rem at -5% 105%, rgba(77, 182, 15, 0.07), transparent 60%),
+      radial-gradient(rgba(11, 58, 20, 0.07) 1px, transparent 1px);
     background-size: auto, auto, 22px 22px;
   }
 
-  .fundo-menta {
-    background-color: var(--color-menta);
+  .fundo-suave {
+    background-color: var(--color-verde-fundo);
     background-image:
       radial-gradient(50rem 28rem at 10% -10%, rgba(255, 255, 255, 0.7), transparent 60%),
-      radial-gradient(40rem 26rem at 105% 100%, rgba(27, 94, 95, 0.14), transparent 60%),
-      radial-gradient(rgba(11, 59, 63, 0.08) 1px, transparent 1px);
+      radial-gradient(40rem 26rem at 105% 100%, rgba(20, 107, 13, 0.14), transparent 60%),
+      radial-gradient(rgba(11, 58, 20, 0.08) 1px, transparent 1px);
     background-size: auto, auto, 22px 22px;
   }
 
-  /* Cartão premium: vidro claro, filete coral que acende no hover */
+  /* Cartão premium: vidro claro, filete verde que acende no hover */
   .cartao {
     position: relative;
     overflow: hidden;
     border-radius: 1.75rem;
-    border: 1px solid rgba(11, 59, 63, 0.1);
+    border: 1px solid rgba(11, 58, 20, 0.1);
     background: linear-gradient(160deg, #fff 0%, rgba(255, 255, 255, 0.82) 100%);
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.9) inset,
-      0 24px 50px -32px rgba(11, 59, 63, 0.45);
+      0 24px 50px -32px rgba(11, 58, 20, 0.45);
     transition:
       transform 0.6s cubic-bezier(0.16, 1, 0.3, 1),
       box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1),
@@ -121,17 +129,17 @@
     inset: 0 0 auto 0;
     height: 3px;
     z-index: 2;
-    background: linear-gradient(90deg, var(--color-coral), transparent 70%);
+    background: linear-gradient(90deg, var(--color-verde), transparent 70%);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .cartao:hover {
     transform: translateY(-6px);
-    border-color: rgba(232, 98, 63, 0.35);
+    border-color: rgba(77, 182, 15, 0.35);
     box-shadow:
       0 1px 0 rgba(255, 255, 255, 0.9) inset,
-      0 40px 70px -34px rgba(11, 59, 63, 0.55);
+      0 40px 70px -34px rgba(11, 58, 20, 0.55);
   }
   .cartao:hover::before {
     transform: scaleX(1);
@@ -179,6 +187,23 @@
 
 @media (prefers-reduced-motion: reduce) {
   .depoimentos-trilho {
+    animation: none;
+  }
+}
+
+/* Ondas da Hero: o grupo desliza um período inteiro e recomeça, sem emenda */
+@keyframes onda-fluxo {
+  to {
+    transform: translateX(calc(var(--deslocamento) * -1));
+  }
+}
+
+.onda {
+  animation: onda-fluxo var(--duracao, 14s) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .onda {
     animation: none;
   }
 }

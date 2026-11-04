@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { GraduationCap, Menu, X } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { Marca } from "@/components/ui/Marca";
 import { navegacao, whatsapp } from "@/lib/site";
@@ -31,12 +31,12 @@ export default function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
           rolou
-            ? "border-b border-menta-linha bg-menta-fundo text-petroleo md:bg-menta-fundo/90 md:backdrop-blur-xl"
+            ? "border-b border-verde-linha bg-verde-fundo text-institucional md:bg-verde-fundo/90 md:backdrop-blur-xl"
             : "border-b border-transparent text-white"
         }`}
       >
         <div className="container-x flex items-center justify-between gap-8 py-3.5">
-          <Link href="#hero" aria-label="Escola Técnica Irmã Sheila — início" className="shrink-0">
+          <Link href="/#hero" aria-label="Escola Técnica Irmã Sheila — início" className="shrink-0">
             <Marca />
           </Link>
 
@@ -48,7 +48,7 @@ export default function Header() {
                 className="group relative text-sm font-medium opacity-80 transition-opacity duration-300 hover:opacity-100"
               >
                 {item.rotulo}
-                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-coral transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
+                <span className="absolute -bottom-1.5 left-0 h-px w-0 bg-verde transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full" />
               </Link>
             ))}
           </nav>
@@ -57,6 +57,14 @@ export default function Header() {
             <Botao href={whatsapp} tamanho="sm" className="hidden sm:inline-flex">
               Faça sua Matrícula
             </Botao>
+            {/* TODO: definir o link do Portal do aluno */}
+            <button
+              type="button"
+              className="hidden items-center gap-2 rounded-full border border-current/40 px-5 py-2.5 text-sm font-semibold transition-colors duration-300 hover:bg-current/10 sm:inline-flex"
+            >
+              <GraduationCap className="h-4 w-4" />
+              Portal do aluno
+            </button>
             <button
               type="button"
               onClick={() => setMenu(true)}
@@ -76,7 +84,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] bg-petroleo-escuro text-white lg:hidden"
+            className="fixed inset-0 z-[60] bg-profundo text-white lg:hidden"
           >
             <div className="flex h-full flex-col px-6 py-4">
               <div className="flex items-center justify-between">
@@ -113,6 +121,14 @@ export default function Header() {
               <Botao href={whatsapp} className="w-full">
                 Faça sua Matrícula
               </Botao>
+              {/* TODO: definir o link do Portal do aluno */}
+              <button
+                type="button"
+                className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white px-7 py-3.5 font-semibold transition-colors duration-300 hover:bg-white/10"
+              >
+                <GraduationCap className="h-4 w-4" />
+                Portal do aluno
+              </button>
             </div>
           </motion.div>
         )}

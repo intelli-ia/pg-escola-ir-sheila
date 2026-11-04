@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variante = "coral" | "menta" | "contorno" | "contorno-escuro";
+type Variante = "verde" | "verde-claro" | "contorno" | "contorno-escuro";
 
 interface BotaoProps {
   href: string;
@@ -14,24 +14,24 @@ interface BotaoProps {
 }
 
 const variantes: Record<Variante, string> = {
-  coral:
-    "bg-coral text-white hover:bg-coral-escuro shadow-[0_10px_30px_-10px_rgba(232,98,63,0.7),inset_0_1px_0_rgba(255,255,255,0.28)]",
-  menta: "bg-menta text-petroleo hover:bg-white",
-  contorno: "border border-white/35 text-white hover:border-white/70 hover:bg-white/10",
-  "contorno-escuro": "border border-petroleo/25 text-petroleo hover:border-petroleo/60 hover:bg-petroleo/[0.05]",
+  verde:
+    "border border-white bg-verde text-profundo hover:bg-verde-hover shadow-[0_10px_30px_-10px_rgba(77,182,15,0.7),inset_0_1px_0_rgba(255,255,255,0.28)]",
+  "verde-claro": "bg-verde-claro text-institucional hover:bg-white",
+  contorno: "border border-white text-white hover:border-white hover:bg-white/10",
+  "contorno-escuro": "border border-institucional/25 text-institucional hover:border-institucional/60 hover:bg-profundo/[0.05]",
 };
 
 /** CTA da marca: pílula com seta que desliza no hover. */
 export function Botao({
   href,
   children,
-  variante = "coral",
+  variante = "verde",
   tamanho = "md",
   className,
   externo,
 }: BotaoProps) {
   const ancora = href.startsWith("#");
-  const ehExterno = externo ?? !ancora;
+  const ehExterno = externo ?? /^https?:/.test(href);
   const Comp = ancora ? "a" : Link;
   return (
     <Comp
