@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-type Variante = "verde" | "verde-claro" | "contorno" | "contorno-escuro";
+type Variante = "verde" | "branco" | "verde-claro" | "contorno" | "contorno-escuro";
 
 interface BotaoProps {
   href: string;
@@ -16,6 +16,8 @@ interface BotaoProps {
 const variantes: Record<Variante, string> = {
   verde:
     "border border-white bg-verde text-profundo hover:bg-verde-hover shadow-[0_10px_30px_-10px_rgba(77,182,15,0.7),inset_0_1px_0_rgba(255,255,255,0.28)]",
+  branco:
+    "border border-white bg-white text-institucional hover:bg-verde-claro shadow-[0_10px_30px_-12px_rgba(6,30,12,0.5)]",
   "verde-claro": "bg-verde-claro text-institucional hover:bg-white",
   contorno: "border border-white text-white hover:border-white hover:bg-white/10",
   "contorno-escuro": "border border-institucional/25 text-institucional hover:border-institucional/60 hover:bg-profundo/[0.05]",

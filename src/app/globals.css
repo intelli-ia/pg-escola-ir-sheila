@@ -34,7 +34,8 @@
   }
 
   body {
-    overflow-x: hidden;
+    /* clip (e não hidden) para não criar um contêiner de rolagem, o que quebraria o position: sticky */
+    overflow-x: clip;
     background-color: #fff;
     color: var(--color-tinta);
     font-family: var(--font-corpo);

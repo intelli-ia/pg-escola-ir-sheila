@@ -3,6 +3,10 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Botao } from "@/components/ui/Botao";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useEffect, useState } from "react";
+import SlideMatriculas from "@/components/hero/SlideMatriculas";
+import SlideProfissoes from "@/components/hero/SlideProfissoes";
 import { caminhoOnda } from "@/lib/ondas";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -133,7 +137,7 @@ function PostIt({ nota }: { nota: (typeof notas)[number] }) {
       <CirculoManual />
       <div className="relative z-10 flex flex-col items-center px-3 py-2">
         <p
-          className="manuscrito text-center text-[1.5rem] font-bold leading-[1.05] drop-shadow-[0_2px_6px_rgba(6,30,12,0.4)] xl:text-[2rem]"
+          className="manuscrito text-center text-[1.2rem] font-bold leading-[1.05] drop-shadow-[0_2px_6px_rgba(6,30,12,0.4)] xl:text-[1.6rem]"
           style={{ color: tinta }}
         >
           {nota.linhas.map((linha, i) => (
@@ -156,12 +160,9 @@ const ondas = [
   { y: 86, amplitude: 14, periodo: 180, duracao: 8, opacidade: 0.2, cor: "#ffffff", espessura: 1 },
 ];
 
-export default function Hero() {
+function SlideFormacao() {
   return (
-    <section
-      id="hero"
-      className="grao relative isolate flex min-h-[100svh] items-center overflow-hidden bg-[#239C0B] pb-20 pt-32 text-white md:pb-24"
-    >
+    <div className="grao relative isolate flex items-center overflow-hidden bg-[#239C0B] bg-[radial-gradient(40rem_32rem_at_78%_30%,rgba(98,199,33,0.75),transparent_70%),linear-gradient(225deg,#4DB60F_0%,#239C0B_45%,#146B0D_100%)] pb-16 pt-28 text-white lg:min-h-[40rem]">
       {/* Ondas no canto inferior esquerdo: textura e movimento */}
       <svg
         aria-hidden="true"
@@ -191,14 +192,14 @@ export default function Hero() {
 
       {/* Desktop: recorte dos alunos ancorado embaixo, à direita */}
       <div
-        className="absolute bottom-0 right-0 -z-10 hidden aspect-[4/3] w-[52%] max-w-[58rem] lg:block"
+        className="absolute bottom-0 right-0 -z-10 hidden aspect-[4/3] w-[40%] max-w-[44rem] lg:block"
       >
         <Image
           src="/fotos/hero-estudantes.png"
           alt="Alunos da Escola Técnica Irmã Sheila de jaleco e touca"
           fill
           priority
-          sizes="52vw"
+          sizes="40vw"
           className="object-contain object-bottom"
         />
         <FiltroRabisco />
@@ -216,7 +217,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease }}
-            className="titulo text-[2.6rem] sm:text-[3.4rem] lg:text-[4.4rem]"
+            className="titulo text-[2.6rem] sm:text-[3.4rem] lg:text-[3.9rem]"
           >
             Seu futuro na área da saúde começa com uma <em className="text-profundo">formação prática.</em>
           </motion.h1>
@@ -237,12 +238,14 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.4, ease }}
             className="mt-10"
           >
-            <Botao href="#cursos">Encontre seu curso</Botao>
+            <Botao href="#cursos" variante="branco">
+              Encontre seu curso
+            </Botao>
           </motion.div>
         </div>
 
         {/* Mobile: recorte abaixo do texto, encostado na borda inferior */}
-        <div className="relative -mb-20 mx-auto mt-12 aspect-[4/3] w-[92%] max-w-[32rem] md:-mb-24 lg:hidden">
+        <div className="relative -mb-16 mx-auto mt-10 aspect-[4/3] w-[92%] max-w-[32rem] lg:hidden">
           <Image
             src="/fotos/hero-estudantes.png"
             alt="Alunos da Escola Técnica Irmã Sheila de jaleco e touca"
@@ -252,6 +255,105 @@ export default function Hero() {
             className="object-contain object-bottom"
           />
         </div>
+      </div>
+    </div>
+  );
+}
+
+const slides = [
+  { rotulo: "Formação prática", Slide: SlideFormacao },
+  { rotulo: "Matrículas abertas", Slide: SlideMatriculas },
+  { rotulo: "Escolha sua profissão", Slide: SlideProfissoes },
+];
+
+const INTERVALO = 8000;
+
+/** Hero em carrossel: três composições (copy, cores e elementos visuais diferentes) em rotação. */
+export default function Hero() {
+  const [atual, setAtualBruto] = useState(0);
+  const [anterior, setAnterior] = useState(0);
+  const [pausado, setPausado] = useState(false);
+  const [reduzido, setReduzido] = useState(false);
+
+  const setAtual = (fn: number | ((a: number) => number)) => {
+    setAtualBruto((a) => {
+      const novo = typeof fn === "function" ? fn(a) : fn;
+      if (novo !== a) setAnterior(a);
+      return novo;
+    });
+  };
+
+  useEffect(() => {
+    setReduzido(window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
+
+  useEffect(() => {
+    if (pausado || reduzido) return;
+    const t = window.setTimeout(() => setAtual((a) => (a + 1) % slides.length), INTERVALO);
+    return () => window.clearTimeout(t);
+  }, [atual, pausado, reduzido]);
+
+  const ir = (delta: number) => setAtual((a) => (a + delta + slides.length) % slides.length);
+
+  const seta =
+    "absolute top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/15 text-white backdrop-blur-sm transition-colors duration-300 hover:bg-white hover:text-institucional lg:flex";
+
+  return (
+    <section
+      id="hero"
+      aria-roledescription="carrossel"
+      aria-label="Destaques da escola"
+      className="relative text-white"
+      onMouseEnter={() => setPausado(true)}
+      onMouseLeave={() => setPausado(false)}
+      onFocusCapture={() => setPausado(true)}
+      onBlurCapture={() => setPausado(false)}
+    >
+      {/* "Empurrar": o slide novo entra empurrando o atual; quem não participa do movimento muda de lugar sem animar */}
+      <div className="grid overflow-hidden">
+        {slides.map(({ rotulo, Slide }, i) => {
+          const posicao = (i - atual + slides.length) % slides.length;
+          const x = posicao === 0 ? 0 : posicao === slides.length - 1 ? -100 : 100;
+          const anima = i === atual || i === anterior;
+          return (
+            <div
+              key={rotulo}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`${i + 1} de ${slides.length}: ${rotulo}`}
+              aria-hidden={i !== atual}
+              inert={i !== atual}
+              style={{ transform: `translateX(${x}%)` }}
+              className={`col-start-1 row-start-1 ${
+                anima ? "transition-transform duration-700 ease-[cubic-bezier(0.65,0,0.35,1)] motion-reduce:transition-none" : ""
+              }`}
+            >
+              <Slide />
+            </div>
+          );
+        })}
+      </div>
+
+      <button type="button" onClick={() => ir(-1)} aria-label="Slide anterior" className={`${seta} left-4 xl:left-8`}>
+        <ChevronLeft className="h-5 w-5" />
+      </button>
+      <button type="button" onClick={() => ir(1)} aria-label="Próximo slide" className={`${seta} right-4 xl:right-8`}>
+        <ChevronRight className="h-5 w-5" />
+      </button>
+
+      <div className="absolute inset-x-0 bottom-4 z-20 flex justify-center gap-2.5">
+        {slides.map(({ rotulo }, i) => (
+          <button
+            key={rotulo}
+            type="button"
+            onClick={() => setAtual(i)}
+            aria-label={`Ir para o slide ${i + 1}: ${rotulo}`}
+            aria-current={i === atual}
+            className={`h-2.5 rounded-full transition-all duration-500 ${
+              i === atual ? "w-8 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
+            }`}
+          />
+        ))}
       </div>
     </section>
   );

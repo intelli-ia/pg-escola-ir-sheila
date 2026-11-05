@@ -6,7 +6,10 @@ import Diferenciais from "@/components/Diferenciais";
 import Estrutura from "@/components/Estrutura";
 import Localizacao from "@/components/Localizacao";
 import Depoimentos from "@/components/Depoimentos";
+import Noticias from "@/components/Noticias";
+import Premiacoes from "@/components/Premiacoes";
 import FAQ from "@/components/FAQ";
+import CtaMatricula from "@/components/CtaMatricula";
 
 export default function HomePage() {
   return (
@@ -23,7 +26,10 @@ export default function HomePage() {
         <Localizacao />
       </div>
       <Depoimentos />
+      <Premiacoes />
+      <Noticias />
       <FAQ />
+      <CtaMatricula />
     </>
   );
 }

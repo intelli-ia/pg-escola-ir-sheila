@@ -54,13 +54,13 @@ export default function Header() {
           </nav>
 
           <div className="flex items-center gap-3">
-            <Botao href={whatsapp} tamanho="sm" className="hidden sm:inline-flex">
+            <Botao href={whatsapp} tamanho="sm" variante={rolou ? "verde" : "branco"} className="hidden sm:inline-flex">
               Faça sua Matrícula
             </Botao>
             {/* TODO: definir o link do Portal do aluno */}
             <button
               type="button"
-              className="hidden items-center gap-2 rounded-full border border-current/40 px-5 py-2.5 text-sm font-semibold transition-colors duration-300 hover:bg-current/10 sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full border border-current px-5 py-2.5 text-sm font-semibold transition-colors duration-300 hover:bg-current/10 sm:inline-flex"
             >
               <GraduationCap className="h-4 w-4" />
               Portal do aluno
@@ -118,7 +118,7 @@ export default function Header() {
                 ))}
               </nav>
 
-              <Botao href={whatsapp} className="w-full">
+              <Botao href={whatsapp} variante="branco" className="w-full">
                 Faça sua Matrícula
               </Botao>
               {/* TODO: definir o link do Portal do aluno */}

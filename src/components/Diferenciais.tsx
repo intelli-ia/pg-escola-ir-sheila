@@ -7,7 +7,7 @@ export default function Diferenciais() {
     <section id="diferenciais" className="fundo-claro relative py-20 md:py-32">
       <div className="container-x">
         <Reveal>
-          <h2 className="titulo max-w-[44rem] text-[2.3rem] text-institucional sm:text-[3.1rem] lg:text-[3.8rem]">
+          <h2 className="titulo mx-auto max-w-[44rem] text-center text-[2.3rem] text-institucional sm:text-[3.1rem] lg:text-[3.8rem]">
             Aprenda na prática <em className="text-verde-texto">o que sua profissão vai exigir.</em>
           </h2>
         </Reveal>

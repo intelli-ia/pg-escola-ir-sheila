@@ -23,6 +23,12 @@ export default function Estrutura() {
           <h2 className="titulo text-[2.3rem] text-institucional sm:text-[3.1rem] lg:text-[3.8rem]">
             Estrutura da <em className="text-verde-texto">escola</em>
           </h2>
+          <p className="mt-6 max-w-[46rem] text-base leading-relaxed text-tinta/80 md:text-lg">
+            A Escola Técnica Irmã Sheila reúne a infraestrutura necessária para uma formação técnica de qualidade:
+            salas de aula, laboratório de informática, biblioteca e ambientes de prática, organizados para o
+            desenvolvimento das competências exigidas em cada curso e em conformidade com as diretrizes da educação
+            profissional.
+          </p>
         </Reveal>
 
         <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-4 md:grid-rows-[repeat(2,minmax(0,15rem))]">
