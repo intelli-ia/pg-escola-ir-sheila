@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
-import { IconeFacebook, IconeInstagram, IconeWhatsApp } from "@/components/ui/Icones";
+import { IconeInstagram, IconeWhatsApp } from "@/components/ui/Icones";
 import { Marca } from "@/components/ui/Marca";
 import { caminhoDoCurso, cursos } from "@/lib/cursos";
 import { redes, site, whatsapp } from "@/lib/site";
@@ -18,7 +18,6 @@ const secoes = [
 
 const sociais = [
   { rotulo: "Instagram", href: redes.instagram, Icone: IconeInstagram },
-  { rotulo: "Facebook", href: redes.facebook, Icone: IconeFacebook },
   { rotulo: "WhatsApp", href: whatsapp, Icone: IconeWhatsApp },
 ] as const;
 

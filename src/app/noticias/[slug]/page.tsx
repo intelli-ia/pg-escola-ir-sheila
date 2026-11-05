@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { Reveal } from "@/components/ui/Reveal";
 import { caminhoDaNoticia, noticiaPorSlug, noticias } from "@/lib/noticias";
@@ -103,9 +103,6 @@ export default async function NoticiaPage({ params }: Props) {
           </ul>
 
           <div className="mt-14 flex flex-wrap items-center justify-center gap-3">
-            <Botao href="/#noticias" variante="contorno-escuro" externo={false}>
-              <ArrowLeft className="h-4 w-4" /> Todas as notícias
-            </Botao>
             <Botao href={whatsapp}>Quero me matricular</Botao>
           </div>
         </div>

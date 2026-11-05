@@ -9,10 +9,9 @@ export const site = {
   telefone: "(71) 3190-0118",
 } as const;
 
-/** Redes sociais. TODO: trocar "#" pelos endereços oficiais do Instagram e do Facebook da escola. */
+/** Redes sociais. */
 export const redes = {
-  instagram: "#",
-  facebook: "#",
+  instagram: "https://www.instagram.com/irmasheila_diasdavila/",
 } as const;
 
 const wa = (texto: string) =>

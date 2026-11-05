@@ -121,14 +121,13 @@ function Doodle({ tipo, className }: { tipo: keyof typeof doodles; className?: s
 
 /** Onde antes ficavam as outras anotações: doodles espalhados para preencher. */
 const rabiscosSoltos = [
-  { tipo: "estrela", classe: "left-[4%] top-[-17%] h-9 w-9 -rotate-12" },
-  { tipo: "coracao", classe: "left-[13%] top-[-9%] h-11 w-11 rotate-6" },
-  { tipo: "pulso", classe: "left-[21%] top-[-2%] h-8 w-20 -rotate-3" },
-  { tipo: "raios", classe: "left-[9%] top-[-24%] h-9 w-9 -rotate-6" },
-  { tipo: "espiral", classe: "left-[37%] top-[-21%] h-12 w-12 rotate-12" },
-  { tipo: "onda", classe: "left-[44%] top-[-9%] h-7 w-16 rotate-3" },
-  { tipo: "estrela", classe: "left-[54%] top-[-27%] h-7 w-7 rotate-12" },
-  { tipo: "raios", classe: "left-[50%] top-[-16%] h-8 w-8 rotate-6" },
+  { tipo: "estrela", classe: "left-[4%] top-[-7%] h-9 w-9 -rotate-12" },
+  { tipo: "coracao", classe: "left-[13%] top-[1%] h-11 w-11 rotate-6" },
+  { tipo: "pulso", classe: "left-[21%] top-[8%] h-8 w-20 -rotate-3" },
+  { tipo: "raios", classe: "left-[9%] top-[-14%] h-9 w-9 -rotate-6" },
+  { tipo: "espiral", classe: "left-[37%] top-[-11%] h-12 w-12 rotate-12" },
+  { tipo: "onda", classe: "left-[44%] top-[1%] h-7 w-16 rotate-3" },
+  { tipo: "raios", classe: "left-[50%] top-[-6%] h-8 w-8 rotate-6" },
 ] as const;
 
 /** Versão mobile: poucos doodles pequenos nos cantos de cima da foto (sem a nota dos professores). */
