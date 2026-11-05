@@ -9,10 +9,10 @@ const quadros = [
 ];
 
 const fotos = [
-  { src: "/fotos/estrutura-sala-de-aula.webp", alt: "Sala de aula" },
-  { src: "/fotos/estrutura-informatica.webp", alt: "Laboratório de informática" },
-  { src: "/fotos/estrutura-biblioteca.webp", alt: "Biblioteca" },
-  { src: "/fotos/estrutura-fachada.webp", alt: "Fachada da escola" },
+  { src: "/fotos/estrutura-sala-de-aula-carteiras.webp", alt: "Sala de aula" },
+  { src: "/fotos/estrutura-laboratorio-informatica.webp", alt: "Laboratório de informática" },
+  { src: "/fotos/estrutura-biblioteca-estantes.webp", alt: "Biblioteca" },
+  { src: "/fotos/estrutura-fachada-muro-cursos.webp", alt: "Fachada da escola" },
 ];
 
 export default function Estrutura() {

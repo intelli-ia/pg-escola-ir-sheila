@@ -2,6 +2,13 @@ import { FotoSlot } from "@/components/ui/FotoSlot";
 import { Reveal } from "@/components/ui/Reveal";
 import { diferenciais } from "@/lib/site";
 
+const imagens = [
+  "/fotos/diferencial-pratica-enfermeiras-paciente.webp",
+  "/fotos/diferencial-acompanhamento-leitos-simulacao.webp",
+  "/fotos/diferencial-enfermeira-registrando-prontuario.webp",
+  "/fotos/diferencial-aula-pratica-aferindo-pressao.webp",
+] as const;
+
 export default function Diferenciais() {
   return (
     <section id="diferenciais" className="fundo-claro relative py-20 md:py-32">
@@ -17,7 +24,7 @@ export default function Diferenciais() {
             <Reveal key={item.titulo} delay={(i % 2) * 0.1}>
               <article className="cartao h-full p-3">
                 <div className="relative">
-                  <FotoSlot src={`/fotos/diferencial-${i + 1}.webp`} alt={item.titulo} className="aspect-[16/9] w-full rounded-[1.4rem]" />
+                  <FotoSlot src={imagens[i]} alt={item.titulo} className="aspect-[16/9] w-full rounded-[1.4rem]" />
                   <span className="titulo absolute left-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-profundo text-lg text-verde-claro shadow-lg">
                     {i + 1}.
                   </span>

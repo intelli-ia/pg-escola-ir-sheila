@@ -1,4 +1,3 @@
-import { MapPin } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { IconeWhatsApp } from "@/components/ui/Icones";
 import { Reveal } from "@/components/ui/Reveal";
@@ -16,10 +15,7 @@ export default function Localizacao() {
             <div className="pointer-events-none absolute -right-20 -top-24 -z-10 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(77,182,15,0.22),transparent)]" />
 
             <div className="flex flex-col justify-between gap-8">
-              <div className="flex items-start gap-5">
-                <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-verde-claro text-institucional">
-                  <MapPin className="h-6 w-6" strokeWidth={1.6} />
-                </span>
+              <div className="flex items-start">
                 <div>
                   <h2 className="titulo text-[1.9rem] md:text-[2.4rem]">Localização e contato</h2>
                   <p className="mt-2 max-w-md text-white/75">{site.endereco}</p>

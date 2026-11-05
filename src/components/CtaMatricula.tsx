@@ -15,7 +15,7 @@ export default function CtaMatricula() {
       <div className="container-x">
         <Reveal>
           <Image
-            src="/logo.webp"
+            src="/logo-irma-sheila.webp"
             alt="Logo da Escola Técnica Irmã Sheila"
             width={88}
             height={88}

@@ -67,8 +67,13 @@ export default function Numeros() {
     <section id="numeros" className="relative overflow-hidden rounded-[2.5rem] bg-verde-forte py-20 md:rounded-[3.5rem] md:py-32">
       <div className="container-x relative">
         <Reveal>
-          <h2 className="titulo mx-auto mb-14 max-w-[72rem] text-center text-[3rem] font-bold text-white sm:text-[4.2rem] md:mb-20 lg:text-[5.5rem]">
-            Uma tradição em formar <em className="font-bold text-white">profissionais da saúde.</em>
+          <h2 className="titulo mx-auto mb-14 max-w-[72rem] text-center text-[3.1rem] font-bold text-white sm:text-[4.2rem] md:mb-20 lg:text-[5.5rem]">
+            Uma tradição <br className="sm:hidden" />
+            em formar <br className="sm:hidden" />
+            <em className="font-bold text-white">
+              profissionais <br className="sm:hidden" />
+              da saúde.
+            </em>
           </h2>
         </Reveal>
 
