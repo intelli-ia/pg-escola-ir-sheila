@@ -3,6 +3,7 @@ import Numeros from "@/components/Numeros";
 import Escolha from "@/components/Escolha";
 import Cursos from "@/components/Cursos";
 import Diferenciais from "@/components/Diferenciais";
+import Historia from "@/components/Historia";
 import Estrutura from "@/components/Estrutura";
 import Localizacao from "@/components/Localizacao";
 import Depoimentos from "@/components/Depoimentos";
@@ -21,6 +22,7 @@ export default function HomePage() {
       </div>
       <Escolha />
       <Diferenciais />
+      <Historia />
       <div className="fundo-suave">
         <Estrutura />
         <Localizacao />
