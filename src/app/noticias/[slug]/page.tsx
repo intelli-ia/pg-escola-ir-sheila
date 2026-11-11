@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
+import CtaMatricula from "@/components/CtaMatricula";
 import { Botao } from "@/components/ui/Botao";
 import { Reveal } from "@/components/ui/Reveal";
 import { caminhoDaNoticia, noticiaPorSlug, noticias } from "@/lib/noticias";
@@ -138,6 +139,7 @@ export default async function NoticiaPage({ params }: Props) {
           </div>
         </section>
       )}
+      <CtaMatricula />
     </>
   );
 }

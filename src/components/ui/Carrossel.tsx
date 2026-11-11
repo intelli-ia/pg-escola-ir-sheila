@@ -48,7 +48,7 @@ export function Carrossel({ children, rotulo }: { children: ReactNode; rotulo: s
         {children}
       </ul>
 
-      <div className="container-x mt-8 flex items-center justify-center gap-3">
+      <div className="container-x mt-8 flex items-center justify-center gap-3 lg:mt-1">
         <button type="button" onClick={() => mover(-1)} disabled={noInicio} aria-label="Anteriores" className={botao}>
           <ChevronLeft className="h-5 w-5" />
         </button>

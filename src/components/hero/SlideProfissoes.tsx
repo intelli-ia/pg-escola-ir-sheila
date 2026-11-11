@@ -11,17 +11,17 @@ const colagem = [
 /** Slide 3: verde institucional, pergunta direta, atalhos para os cursos e colagem de fotos inclinadas. */
 export default function SlideProfissoes() {
   return (
-    <div className="grao relative isolate flex items-center overflow-hidden bg-institucional bg-gradient-to-br from-institucional via-[#0f5a0a] to-profundo pb-20 pt-28 text-white lg:h-[40rem] lg:pb-16">
+    <div className="grao relative isolate flex items-center overflow-hidden bg-institucional bg-gradient-to-br from-institucional via-[#0f5a0a] to-profundo pb-16 pt-24 text-white max-sm:h-svh max-sm:min-h-[34rem] sm:pb-20 sm:pt-28 lg:h-[40rem] lg:pb-16">
       <div className="pointer-events-none absolute -left-24 top-10 -z-10 h-72 w-72 rounded-full border border-verde/30" />
       <div className="pointer-events-none absolute -left-10 top-24 -z-10 h-72 w-72 rounded-full border border-verde/20" />
 
       <div className="container-x grid items-center gap-10 lg:grid-cols-12">
         <div className="text-center lg:col-span-6 lg:text-left">
           <p className="text-sm font-bold uppercase tracking-[0.18em] text-verde">Cursos na área da saúde</p>
-          <h2 className="titulo mt-4 text-[2.9rem] sm:text-[3.8rem] lg:text-[4.2rem]">
+          <h2 className="titulo mt-4 text-[2.35rem] sm:text-[3.8rem] lg:text-[4.2rem]">
             Qual profissão <em className="text-verde">combina com você?</em>
           </h2>
-          <ul className="mx-auto mt-8 flex max-w-[40rem] flex-wrap justify-center gap-2.5 lg:mx-0 lg:justify-start">
+          <ul className="mx-auto mt-6 flex max-w-[40rem] sm:mt-8 flex-wrap justify-center gap-2.5 lg:mx-0 lg:justify-start">
             {cursos.map((c) => (
               <li key={c.slug}>
                 <Link

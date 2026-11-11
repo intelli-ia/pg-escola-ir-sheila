@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import CtaMatricula from "@/components/CtaMatricula";
 import CursoHero from "@/components/curso/CursoHero";
 import CursoSobre from "@/components/curso/CursoSobre";
 import OutrosCursos from "@/components/curso/OutrosCursos";
@@ -47,6 +48,7 @@ export default async function CursoPage({ params }: Props) {
       <Depoimentos />
       <OutrosCursos atual={curso.slug} />
       <FAQ />
+      <CtaMatricula />
     </>
   );
 }

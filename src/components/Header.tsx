@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GraduationCap, Menu, X } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { Marca } from "@/components/ui/Marca";
-import { navegacao, whatsapp } from "@/lib/site";
+import { navegacao, navegacaoMobile, whatsapp } from "@/lib/site";
 
 export default function Header() {
   const [rolou, setRolou] = useState(false);
@@ -99,18 +99,18 @@ export default function Header() {
                 </button>
               </div>
 
-              <nav className="flex flex-1 flex-col justify-center">
-                {navegacao.map((item, i) => (
+              <nav className="flex min-h-0 flex-1 flex-col justify-center overflow-y-auto py-2">
+                {navegacaoMobile.map((item, i) => (
                   <motion.div
                     key={item.href}
                     initial={{ opacity: 0, y: 18 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.08 + i * 0.07, duration: 0.5 }}
+                    transition={{ delay: 0.06 + i * 0.04, duration: 0.5 }}
                   >
                     <Link
                       href={item.href}
                       onClick={() => setMenu(false)}
-                      className="titulo block border-b border-white/10 py-5 text-[2.25rem]"
+                      className="titulo block border-b border-white/10 py-3.5 text-[1.6rem]"
                     >
                       {item.rotulo}
                     </Link>

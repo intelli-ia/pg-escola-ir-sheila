@@ -134,11 +134,11 @@ const rabiscosSoltos = [
 const rabiscosMobile = [
   // Esquerda: três rabiscos espaçados, subindo em diagonal
   { tipo: "estrela", classe: "left-[3%] top-[10%] h-8 w-8 -rotate-12" },
-  { tipo: "coracao", classe: "left-[17%] top-[-4%] h-8 w-8 rotate-6" },
-  { tipo: "pulso", classe: "left-[32%] top-[-14%] h-6 w-16 -rotate-3" },
+  { tipo: "coracao", classe: "left-[17%] top-[18%] h-8 w-8 rotate-6" },
+  { tipo: "pulso", classe: "left-[32%] top-[6%] h-6 w-16 -rotate-3" },
   // Direita: dois, espelhando o conjunto
-  { tipo: "raios", classe: "right-[20%] top-[-13%] h-8 w-8 rotate-6" },
-  { tipo: "espiral", classe: "right-[4%] top-[-2%] h-9 w-9 rotate-12" },
+  { tipo: "raios", classe: "right-[20%] top-[5%] h-8 w-8 rotate-6" },
+  { tipo: "espiral", classe: "right-[4%] top-[16%] h-9 w-9 rotate-12" },
 ] as const;
 
 function PostIt({ nota }: { nota: (typeof notas)[number] }) {
@@ -172,7 +172,7 @@ const ondas = [
 
 function SlideFormacao() {
   return (
-    <div className="grao relative isolate flex items-stretch overflow-hidden bg-[#239C0B] bg-[radial-gradient(40rem_32rem_at_78%_30%,rgba(98,199,33,0.75),transparent_70%),linear-gradient(225deg,#4DB60F_0%,#239C0B_45%,#146B0D_100%)] pb-16 pt-28 text-white lg:h-[40rem] lg:items-center">
+    <div className="grao relative isolate flex items-stretch overflow-hidden bg-[#239C0B] bg-[radial-gradient(40rem_32rem_at_78%_30%,rgba(98,199,33,0.75),transparent_70%),linear-gradient(225deg,#4DB60F_0%,#239C0B_45%,#146B0D_100%)] pb-0 pt-24 text-white max-sm:h-svh max-sm:min-h-[34rem] sm:pb-16 sm:pt-28 lg:h-[40rem] lg:items-center">
       <FiltroRabisco />
       {/* Ondas no canto inferior esquerdo: textura e movimento */}
       <svg
@@ -222,12 +222,12 @@ function SlideFormacao() {
       </div>
 
       <div className="container-x relative flex flex-col lg:block">
-        <div className="mx-auto max-w-[44rem] text-center lg:mx-0 lg:max-w-[48%] lg:pb-0 lg:text-left pb-10">
+        <div className="mx-auto max-w-[44rem] text-center lg:mx-0 lg:max-w-[48%] lg:pb-0 lg:text-left pb-4 sm:pb-10">
           <motion.h1
             initial={{ opacity: 0, y: 36 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease }}
-            className="titulo text-[2.9rem] sm:text-[3.8rem] lg:text-[4.2rem]"
+            className="titulo text-[2.35rem] sm:text-[3.8rem] lg:text-[4.2rem]"
           >
             Seu futuro na área da saúde começa com uma <em className="text-profundo">formação prática.</em>
           </motion.h1>
@@ -236,7 +236,7 @@ function SlideFormacao() {
             initial={{ opacity: 0, y: 28 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2, ease }}
-            className="mx-auto mt-7 max-w-[34rem] text-base leading-relaxed text-white/80 md:text-lg lg:mx-0"
+            className="mx-auto mt-4 max-w-[34rem] text-[0.9rem] leading-relaxed text-white/80 sm:mt-7 sm:text-base md:text-lg lg:mx-0"
           >
             Na Escola Técnica Irmã Sheila, em Dias D’Ávila, você aprende com professores da área e
             acompanhamento próximo para se preparar para os desafios da profissão.
@@ -246,7 +246,7 @@ function SlideFormacao() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4, ease }}
-            className="mt-10 flex justify-center lg:justify-start"
+            className="mt-6 flex justify-center sm:mt-10 lg:justify-start"
           >
             <Botao href="#cursos" variante="branco">
               Encontre seu curso
@@ -255,7 +255,7 @@ function SlideFormacao() {
         </div>
 
         {/* Mobile: recorte abaixo do texto, encostado na borda inferior */}
-        <div className="relative -mb-16 mx-auto mt-auto aspect-[4/3] w-[92%] max-w-[32rem] origin-bottom scale-[1.18] lg:hidden">
+        <div className="relative mx-auto min-h-0 w-full flex-1 sm:-mb-16 sm:mt-auto sm:aspect-[4/3] sm:w-[92%] sm:max-w-[32rem] sm:flex-none sm:origin-bottom sm:scale-[1.18] lg:hidden">
           <Image
             src="/fotos/hero-alunos-jaleco-recorte.png"
             alt="Alunos da Escola Técnica Irmã Sheila de jaleco e touca"
@@ -312,7 +312,7 @@ export default function Hero() {
     "absolute top-1/2 z-20 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white text-institucional shadow-md transition-colors duration-300 hover:bg-verde-claro lg:flex";
 
   const setaMobile =
-    "flex h-11 w-11 items-center justify-center rounded-full bg-white text-institucional shadow-md transition-colors duration-300 active:bg-verde-claro lg:hidden";
+    "flex h-9 w-9 items-center justify-center rounded-full border border-verde bg-white text-institucional shadow-md transition-colors duration-300 active:bg-verde-claro lg:hidden";
 
   return (
     <section
@@ -359,7 +359,7 @@ export default function Hero() {
 
       <div className="absolute inset-x-0 bottom-3 z-20 flex items-center justify-center gap-3">
         <button type="button" onClick={() => ir(-1)} aria-label="Slide anterior" className={`${setaMobile} mr-1`}>
-          <ChevronLeft className="h-5 w-5" />
+          <ChevronLeft className="h-4 w-4" />
         </button>
         {slides.map(({ rotulo }, i) => (
           <button
@@ -368,13 +368,13 @@ export default function Hero() {
             onClick={() => setAtual(i)}
             aria-label={`Ir para o slide ${i + 1}: ${rotulo}`}
             aria-current={i === atual}
-            className={`h-2.5 rounded-full transition-all duration-500 ${
+            className={`h-2.5 rounded-full transition-all duration-500 max-sm:hidden ${
               i === atual ? "w-8 bg-white" : "w-2.5 bg-white/50 hover:bg-white/80"
             }`}
           />
         ))}
         <button type="button" onClick={() => ir(1)} aria-label="Próximo slide" className={`${setaMobile} ml-1`}>
-          <ChevronRight className="h-5 w-5" />
+          <ChevronRight className="h-4 w-4" />
         </button>
       </div>
     </section>

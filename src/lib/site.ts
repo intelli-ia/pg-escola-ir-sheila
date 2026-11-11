@@ -25,7 +25,19 @@ export const whatsappCurso = (curso: string) =>
 export const navegacao = [
   { href: "/#cursos", rotulo: "Cursos" },
   { href: "/#diferenciais", rotulo: "Diferenciais" },
-  { href: "/#depoimentos", rotulo: "Depoimentos" },
+  { href: "/#historia", rotulo: "História" },
+  { href: "/#localizacao", rotulo: "Localização e Contato" },
+] as const;
+
+/** Menu do celular (hambúrguer): lista completa das seções da home. O menu do desktop usa só `navegacao`. */
+export const navegacaoMobile = [
+  { href: "/#cursos", rotulo: "Cursos" },
+  { href: "/#diferenciais", rotulo: "Diferenciais" },
+  { href: "/#historia", rotulo: "Nossa história" },
+  { href: "/#estrutura", rotulo: "Estrutura da escola" },
+  { href: "/#premiacoes", rotulo: "Premiações" },
+  { href: "/#noticias", rotulo: "Notícias" },
+  { href: "/#localizacao", rotulo: "Localização e contato" },
 ] as const;
 
 export const escolhas = [
