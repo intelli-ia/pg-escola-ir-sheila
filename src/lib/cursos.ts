@@ -22,6 +22,10 @@ export interface Curso {
   /** Parágrafos da seção "Sobre o curso". */
   sobre: readonly string[];
   duracao: string;
+  /** Carga horária total, quando informada pela escola. */
+  cargaHoraria?: string;
+  /** Dias e horários das aulas. */
+  horarios: string;
   /** Média salarial da profissão (valor de referência; revisar com a escola). */
   salario: string;
   modalidade: string;
@@ -31,7 +35,10 @@ export interface Curso {
 
 const ingressoTecnico =
   "A partir do 2º ano do ensino médio ou após sua conclusão, com idade mínima de 16 anos e meio.";
-const consulteRequisitos = "Consulte nossa equipe para conhecer os requisitos de ingresso.";
+const modalidadeTecnico = "Presencial, concomitante ou subsequente ao ensino médio";
+const cargaTecnico = "1.800 horas";
+const idadeMinima = "Idade mínima de 16 anos e meio.";
+const horarioSabado = "Aos sábados, das 8h30 às 12h30.";
 
 /** Conteúdo provisório: textos de "sobre" e "resumo" devem ser revisados pela escola. */
 export const cursos: readonly Curso[] = [
@@ -49,8 +56,11 @@ export const cursos: readonly Curso[] = [
       "Ao concluir, você poderá atuar em diversas áreas, como centro cirúrgico, UTI, pronto-socorro, saúde da família e home care, com amplas possibilidades de crescimento na carreira.",
     ],
     duracao: "25 meses durante a semana ou 29 meses aos sábados",
+    cargaHoraria: cargaTecnico,
+    horarios:
+      "Segunda a quinta: matutino (8h30 às 11h), vespertino (13h30 às 16h) ou noturno (18h às 20h). Aos sábados, das 8h30 às 12h30.",
     salario: "R$ 2.500 a R$ 3.500",
-    modalidade: "Presencial",
+    modalidade: modalidadeTecnico,
     ingresso: ingressoTecnico,
   },
   {
@@ -68,8 +78,10 @@ export const cursos: readonly Curso[] = [
       "É uma área em constante evolução tecnológica, com boas oportunidades de atuação e de especialização em diferentes modalidades de diagnóstico por imagem.",
     ],
     duracao: "25 meses durante a semana ou 29 meses aos sábados",
+    cargaHoraria: cargaTecnico,
+    horarios: "Segunda a quinta, no período noturno (18h às 20h). Aos sábados, das 8h30 às 12h30.",
     salario: "R$ 3.000 a R$ 4.500",
-    modalidade: "Presencial",
+    modalidade: modalidadeTecnico,
     ingresso: ingressoTecnico,
   },
   {
@@ -86,8 +98,10 @@ export const cursos: readonly Curso[] = [
       "É uma carreira para quem gosta de ciência, rotina organizada e quer contribuir diretamente para o cuidado com a saúde, com espaço para especialização em diversas áreas do laboratório.",
     ],
     duracao: "25 meses durante a semana ou 29 meses aos sábados",
+    cargaHoraria: cargaTecnico,
+    horarios: "Segunda a quinta, no período noturno (18h às 20h). Aos sábados, das 8h30 às 12h30.",
     salario: "R$ 2.200 a R$ 3.200",
-    modalidade: "Presencial",
+    modalidade: modalidadeTecnico,
     ingresso: ingressoTecnico,
   },
   {
@@ -104,8 +118,10 @@ export const cursos: readonly Curso[] = [
       "É uma boa escolha para quem se interessa por saúde e alimentação e busca uma profissão com atuação em setores variados.",
     ],
     duracao: "20 meses",
+    cargaHoraria: cargaTecnico,
+    horarios: horarioSabado,
     salario: "R$ 2.000 a R$ 3.000",
-    modalidade: "Presencial",
+    modalidade: modalidadeTecnico,
     ingresso: ingressoTecnico,
   },
   {
@@ -116,16 +132,19 @@ export const cursos: readonly Curso[] = [
     icone: HardHat,
     resumo: "Aprofunde seus conhecimentos na prevenção de riscos e no cuidado com a saúde de quem trabalha.",
     sobre: [
-      "A especialização em saúde do trabalhador é voltada a profissionais da saúde que querem atuar na prevenção de acidentes e doenças relacionadas ao trabalho, um campo cada vez mais valorizado pelas empresas e pelos serviços de saúde.",
+      "A especialização em saúde do trabalhador é voltada a técnicos em enfermagem que querem atuar na prevenção de acidentes e doenças relacionadas ao trabalho, um campo cada vez mais valorizado pelas empresas e pelos serviços de saúde.",
       "O profissional especializado ajuda a identificar riscos no ambiente de trabalho, apoia programas de prevenção e de promoção da saúde, acompanha casos de afastamento e contribui para condições de trabalho mais seguras e saudáveis.",
       "O conteúdo aborda temas como legislação e normas de saúde e segurança, ergonomia, riscos ocupacionais, doenças relacionadas ao trabalho, vigilância em saúde do trabalhador e programas de prevenção em empresas.",
       "O curso é semipresencial, com um encontro presencial por mês, aos sábados, o que facilita conciliar os estudos com o trabalho e a vida pessoal.",
       "Ao concluir, você amplia sua atuação em empresas, ambulatórios e serviços de saúde ocupacional, fortalecendo seu currículo e suas oportunidades.",
     ],
-    duracao: "8 meses",
+    duracao: "8 meses, entre teoria e prática",
+    cargaHoraria: "300 horas",
+    horarios:
+      "Terças e quintas, das 18h30 às 20h, e aos sábados, das 8h30 às 10h30. Um encontro presencial por mês, aos sábados, conforme o calendário disciplinar.",
     salario: "R$ 2.500 a R$ 3.800",
     modalidade: "Semipresencial, com um encontro presencial por mês, aos sábados",
-    ingresso: consulteRequisitos,
+    ingresso: "Ter concluído o Curso Técnico em Enfermagem, ao qual a especialização se vincula.",
   },
   {
     slug: "atendente-de-farmacia",
@@ -141,9 +160,11 @@ export const cursos: readonly Curso[] = [
       "Também é um excelente primeiro passo para quem deseja seguir na área da saúde e, mais adiante, buscar novas formações.",
     ],
     duracao: "3 meses",
+    cargaHoraria: "42 horas",
+    horarios: horarioSabado,
     salario: "R$ 1.800 a R$ 2.400",
     modalidade: "Presencial",
-    ingresso: consulteRequisitos,
+    ingresso: idadeMinima,
   },
   {
     slug: "instrumentacao-cirurgica",
@@ -159,9 +180,10 @@ export const cursos: readonly Curso[] = [
       "Ao concluir, você poderá atuar em hospitais, centros cirúrgicos e clínicas, em diversas especialidades, com possibilidade de se tornar referência na rotina cirúrgica.",
     ],
     duracao: "5 meses",
+    horarios: horarioSabado,
     salario: "R$ 2.500 a R$ 3.800",
     modalidade: "Presencial",
-    ingresso: consulteRequisitos,
+    ingresso: idadeMinima,
   },
 ];
 

@@ -69,11 +69,11 @@ export const duracoes = [
 export const faqs: { q: string; a?: string; lista?: readonly string[] }[] = [
   {
     q: "Posso fazer um curso técnico enquanto estudo no ensino médio?",
-    a: "Sim. Para Enfermagem, Radiologia, Análises Clínicas e Nutrição e Dietética, a escola informa ingresso a partir do 2º ano do ensino médio ou após sua conclusão, com idade mínima de 16 anos e meio.",
+    a: "Sim. Para Enfermagem, Radiologia, Análises Clínicas e Nutrição e Dietética, o ingresso é a partir do 2º ano do ensino médio ou após sua conclusão, com idade mínima de 16 anos e meio. Atendente de Farmácia e Instrumentação Cirúrgica também pedem idade mínima de 16 anos e meio, e a Especialização em Saúde do Trabalhador exige o Curso Técnico em Enfermagem concluído.",
   },
   {
     q: "Quais são os dias e horários das aulas?",
-    a: "As opções variam conforme o curso, com aulas durante a semana ou aos sábados. Consulte nossa equipe para conhecer os horários e as turmas disponíveis.",
+    a: "A escola funciona das 8h às 20h. Enfermagem tem turmas de segunda a quinta pela manhã, à tarde ou à noite, além de sábados. Radiologia e Análises Clínicas têm turmas à noite, de segunda a quinta, e aos sábados. Nutrição e Dietética, Atendente de Farmácia e Instrumentação Cirúrgica são aos sábados, e a Especialização em Saúde do Trabalhador tem aulas às terças, quintas e sábados.",
   },
   {
     q: "Os cursos são presenciais?",

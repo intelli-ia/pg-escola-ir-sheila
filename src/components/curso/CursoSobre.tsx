@@ -1,4 +1,4 @@
-import { Clock, GraduationCap, MapPin, TrendingUp } from "lucide-react";
+import { CalendarDays, Clock, GraduationCap, MapPin, TrendingUp } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Curso } from "@/lib/cursos";
@@ -6,7 +6,12 @@ import { whatsappCurso } from "@/lib/site";
 
 export default function CursoSobre({ curso }: { curso: Curso }) {
   const ficha = [
-    { icone: Clock, rotulo: "Duração", valor: curso.duracao },
+    {
+      icone: Clock,
+      rotulo: "Duração",
+      valor: curso.cargaHoraria ? `${curso.duracao}. Carga horária de ${curso.cargaHoraria}.` : curso.duracao,
+    },
+    { icone: CalendarDays, rotulo: "Dias e horários", valor: curso.horarios },
     { icone: MapPin, rotulo: "Modalidade", valor: curso.modalidade },
     { icone: GraduationCap, rotulo: "Quem pode ingressar", valor: curso.ingresso },
   ];
@@ -15,7 +20,7 @@ export default function CursoSobre({ curso }: { curso: Curso }) {
     <section id="sobre" className="relative pb-20 md:pb-32">
       <div className="container-x">
         {/* Ficha do curso, sobreposta ao hero */}
-        <ul className="relative z-10 -mt-16 grid gap-5 md:-mt-20 md:grid-cols-3">
+        <ul className="relative z-10 -mt-16 grid gap-5 md:-mt-20 md:grid-cols-2 lg:grid-cols-4">
           {ficha.map((item, i) => (
             <li key={item.rotulo}>
               <Reveal delay={i * 0.08} className="h-full">
