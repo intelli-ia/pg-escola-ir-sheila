@@ -23,8 +23,8 @@ export default function Escolha() {
           <Reveal className="lg:col-span-5">
             <div className="cartao h-full p-2">
               <FotoSlot
-                src="/fotos/escolha-enfermeira-atendendo-paciente.webp"
-                alt="Aula prática de enfermagem"
+                src="/fotos/escola/laboratorios/pratica-pesagem-bebe-simulador.jpg"
+                alt="Alunas em aula prática no laboratório da escola"
                 className="h-full min-h-[22rem] w-full rounded-[1.4rem] lg:min-h-[32rem]"
               />
             </div>

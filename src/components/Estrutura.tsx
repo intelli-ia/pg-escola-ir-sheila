@@ -5,14 +5,20 @@ const quadros = [
   "md:col-span-2 md:row-span-2",
   "",
   "",
+  "",
+  "",
+  "md:col-span-2",
   "md:col-span-2",
 ];
 
 const fotos = [
+  { src: "/fotos/escola/laboratorios/pratica-cuidado-paciente-simulador-leito.jpg", alt: "Laboratório de práticas com simulador de leito" },
   { src: "/fotos/estrutura-sala-de-aula-carteiras.webp", alt: "Sala de aula" },
   { src: "/fotos/estrutura-laboratorio-informatica.webp", alt: "Laboratório de informática" },
   { src: "/fotos/estrutura-biblioteca-estantes.webp", alt: "Biblioteca" },
+  { src: "/fotos/escola/laboratorios/pratica-neonatal-simulador-bebe.jpg", alt: "Laboratório de práticas neonatais" },
   { src: "/fotos/estrutura-fachada-muro-cursos.webp", alt: "Fachada da escola" },
+  { src: "/fotos/escola/laboratorios/laboratorio-farmacia-turma-medicamentos.jpg", alt: "Laboratório de farmácia" },
 ];
 
 export default function Estrutura() {
@@ -31,7 +37,7 @@ export default function Estrutura() {
           </p>
         </Reveal>
 
-        <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-4 md:grid-rows-[repeat(2,minmax(0,15rem))]">
+        <div className="mt-12 grid gap-4 md:mt-16 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(0,15rem))]">
           {quadros.map((classe, i) => (
             <Reveal key={i} delay={i * 0.07} className={classe}>
               <div className="cartao h-full p-2">

@@ -34,8 +34,8 @@ export default function SlideMatriculas() {
         <div className="relative mx-auto w-full max-w-[34rem] lg:col-span-6 lg:max-w-none lg:pl-10">
           <div className="relative aspect-[16/11] overflow-hidden rounded-[2rem] ring-1 ring-white/20 lg:rotate-[1.5deg]">
             <Image
-              src="/fotos/escola/alunos-jaleco-touca-laboratorio.webp"
-              alt="Alunos de jaleco e touca no laboratório da escola"
+              src="/fotos/escola/turmas/turma-jaleco-touca-proximo.jpg"
+              alt="Turma da Escola Técnica Irmã Sheila de jaleco e touca"
               fill
               sizes="(min-width: 1024px) 46vw, 90vw"
               className="object-cover"

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { caminhoDoCurso, cursos } from "@/lib/cursos";
 
 const colagem = [
-  { src: "/fotos/escola/atividade-pratica-lar-de-idosos.jpg", alt: "Alunos de jaleco em atividade prática", classe: "left-[0%] top-[2%] w-[56%] -rotate-3" },
-  { src: "/fotos/escola/confraternizacao-turma-vestidos-verdes.jpg", alt: "Turma reunida em celebração", classe: "right-[0%] top-[0%] w-[54%] rotate-2" },
-  { src: "/fotos/escola/acao-social-equipe-camisa-verde.jpg", alt: "Equipe e alunos da escola em ação social", classe: "left-[20%] bottom-[0%] w-[58%] rotate-1" },
+  { src: "/fotos/escola/laboratorios/laboratorio-farmacia-turma-medicamentos.jpg", alt: "Turma no laboratório de farmácia", classe: "left-[0%] top-[2%] w-[56%] -rotate-3" },
+  { src: "/fotos/escola/aulas-praticas/pratica-coleta-venosa-simulador.jpg", alt: "Aula prática de coleta com simulador", classe: "right-[0%] top-[0%] w-[54%] rotate-2" },
+  { src: "/fotos/escola/laboratorios/aula-anatomia-modelo-coracao-turma.jpg", alt: "Turma em aula de anatomia", classe: "left-[20%] bottom-[0%] w-[58%] rotate-1" },
 ] as const;
 
 /** Slide 3: verde institucional, pergunta direta, atalhos para os cursos e colagem de fotos inclinadas. */

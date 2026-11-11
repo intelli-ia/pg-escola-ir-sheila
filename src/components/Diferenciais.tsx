@@ -3,10 +3,10 @@ import { Reveal } from "@/components/ui/Reveal";
 import { diferenciais } from "@/lib/site";
 
 const imagens = [
-  "/fotos/diferencial-pratica-enfermeiras-paciente.webp",
-  "/fotos/diferencial-acompanhamento-leitos-simulacao.webp",
-  "/fotos/diferencial-enfermeira-registrando-prontuario.webp",
-  "/fotos/diferencial-aula-pratica-aferindo-pressao.webp",
+  "/fotos/escola/aulas-praticas/pratica-coleta-venosa-simulador.jpg",
+  "/fotos/escola/aulas-praticas/sala-de-aula-turma-professor.jpg",
+  "/fotos/escola/turmas/turma-jaleco-touca-proximo.jpg",
+  "/fotos/escola/acoes-de-saude/acao-saude-tenda-atendimento-comunidade.jpg",
 ] as const;
 
 export default function Diferenciais() {

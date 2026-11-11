@@ -8,6 +8,13 @@ import { Reveal } from "@/components/ui/Reveal";
 import { caminhoDaNoticia, noticiaPorSlug, noticias } from "@/lib/noticias";
 import { site, whatsapp } from "@/lib/site";
 
+/** Largura de cada foto da galeria conforme a quantidade (gap de 1.25rem no desktop). */
+function larguraGaleria(total: number) {
+  if (total === 1) return "max-w-[32rem]";
+  if (total === 2) return "sm:w-[calc((100%-0.75rem)/2)] md:w-[calc((100%-1.25rem)/2)]";
+  return "sm:w-[calc((100%-0.75rem)/2)] md:w-[calc((100%-1.25rem)/2)] lg:w-[calc((100%-2.5rem)/3)]";
+}
+
 type Props = { params: Promise<{ slug: string }> };
 
 export const dynamicParams = false;
@@ -85,18 +92,18 @@ export default async function NoticiaPage({ params }: Props) {
           <h2 className="titulo mt-16 text-center text-[2rem] text-institucional md:mt-24 md:text-[2.6rem]">
             Galeria de <em className="text-verde-texto">fotos</em>
           </h2>
-          <ul className="mt-10 grid grid-cols-2 gap-3 md:gap-5 lg:grid-cols-3">
+          {/* Galeria: 1 foto centralizada; 2 lado a lado; 3 ou mais em linhas de até 3 (a última linha fica centralizada).
+              Cada foto mantém a proporção original, sem corte nem zoom. */}
+          <ul className="mt-10 flex flex-wrap items-start justify-center gap-3 md:gap-5">
             {noticia.galeria.map((src, i) => (
-              <li
-                key={src + i}
-                className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-verde-claro first:col-span-2 first:row-span-2 first:aspect-auto lg:first:col-span-2"
-              >
+              <li key={src + i} className={`w-full overflow-hidden rounded-[1.25rem] bg-verde-claro ${larguraGaleria(noticia.galeria.length)}`}>
                 <Image
                   src={src}
-                  alt={`${noticia.titulo} — foto ${i + 1}`}
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 50vw"
-                  className="object-cover"
+                  alt={`${noticia.titulo}, foto ${i + 1}`}
+                  width={0}
+                  height={0}
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  className="block h-auto w-full"
                 />
               </li>
             ))}
