@@ -26,7 +26,7 @@ const link = "text-sm text-white/70 transition-colors duration-300 hover:text-wh
 
 export default function Footer() {
   return (
-    <footer className="bg-profundo text-white">
+    <footer className="relative z-10 -mt-10 rounded-t-[2.5rem] bg-profundo text-white md:-mt-14 md:rounded-t-[3.5rem]">
       <div className="container-x grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
         <div className="lg:col-span-4">
           <Marca />

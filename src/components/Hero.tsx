@@ -210,7 +210,7 @@ function SlideFormacao() {
           alt="Alunos da Escola Técnica Irmã Sheila de jaleco e touca"
           fill
           priority
-          sizes="46vw"
+          sizes="min(46vw, 816px)"
           className="object-contain object-bottom"
         />
         {notas.map((n) => (
@@ -261,7 +261,7 @@ function SlideFormacao() {
             alt="Alunos da Escola Técnica Irmã Sheila de jaleco e touca"
             fill
             priority
-            sizes="100vw"
+            sizes="(min-width: 640px) 512px, 92vw"
             className="object-contain object-bottom"
           />
             {rabiscosMobile.map((r, i) => (

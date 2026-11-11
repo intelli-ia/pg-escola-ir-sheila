@@ -30,13 +30,13 @@ export default function Depoimentos() {
       </div>
 
       <div
-        className="depoimentos-faixa mt-12 overflow-hidden motion-reduce:overflow-x-auto md:mt-16"
+        className="depoimentos-faixa -mb-12 mt-12 overflow-hidden motion-reduce:overflow-x-auto md:mt-16"
         style={{
           maskImage:
             "linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent)",
         }}
       >
-        <div className="depoimentos-trilho flex w-max items-stretch gap-6 px-3 py-2">
+        <div className="depoimentos-trilho flex w-max items-stretch gap-6 px-3 pb-14 pt-2">
           {[0, 1].map((copia) =>
             depoimentos.map((d) => (
               <div
