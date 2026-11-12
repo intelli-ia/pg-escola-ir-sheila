@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { GraduationCap, Menu, X } from "lucide-react";
 import { Botao } from "@/components/ui/Botao";
 import { Marca } from "@/components/ui/Marca";
-import { navegacao, navegacaoMobile, whatsapp } from "@/lib/site";
+import { navegacao, navegacaoMobile, portalAluno, whatsapp } from "@/lib/site";
 
 export default function Header() {
   const [rolou, setRolou] = useState(false);
@@ -57,14 +57,15 @@ export default function Header() {
             <Botao href={whatsapp} tamanho="sm" variante={rolou ? "verde" : "branco"} className="hidden sm:inline-flex">
               Faça sua Matrícula
             </Botao>
-            {/* TODO: definir o link do Portal do aluno */}
-            <button
-              type="button"
+            <a
+              href={portalAluno}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden items-center gap-2 rounded-full border border-current px-5 py-2.5 text-sm font-semibold transition-colors duration-300 hover:bg-current/10 sm:inline-flex"
             >
               <GraduationCap className="h-4 w-4" />
               Portal do aluno
-            </button>
+            </a>
             <button
               type="button"
               onClick={() => setMenu(true)}
@@ -121,14 +122,15 @@ export default function Header() {
               <Botao href={whatsapp} variante="branco" className="w-full">
                 Faça sua Matrícula
               </Botao>
-              {/* TODO: definir o link do Portal do aluno */}
-              <button
-                type="button"
+              <a
+                href={portalAluno}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white px-7 py-3.5 font-semibold transition-colors duration-300 hover:bg-white/10"
               >
                 <GraduationCap className="h-4 w-4" />
                 Portal do aluno
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
