@@ -14,6 +14,9 @@ export const redes = {
   instagram: "https://www.instagram.com/irmasheila_diasdavila/",
 } as const;
 
+/** Portal do aluno (Sponte Educacional). */
+export const portalAluno = "https://portal.sponteeducacional.net.br/default.aspx?CID=489572";
+
 const wa = (texto: string) =>
   `https://wa.me/${site.whatsappNumero}?text=${encodeURIComponent(texto)}`;
 
